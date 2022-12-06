@@ -1,0 +1,270 @@
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+
+void menu();
+void penjumlahan();
+void pengurangan();
+void perkalian();
+void pembagian();
+void modulus();
+void keluar();
+
+float input_bilangan(){
+    float bilangan;
+    char huruf;
+    scanf("%f%c", &bilangan,&huruf);
+    if(huruf != '\n'){
+        printf("Input yang Anda masukkan salah, mohon masukkan ulang :");
+        fflush(stdin);
+        input_bilangan();
+    }
+ else{
+        return bilangan;
+    }
+}
+
+int inputBilangan(){
+    int bilangan;
+    char huruf;
+    scanf("%d%c", &bilangan,&huruf);
+    if(huruf != '\n' || bilangan<0){
+        printf("Input yang Anda masukkan salah, mohon masukkan ulang :");
+        fflush(stdin);
+        inputBilangan();
+    }
+ else{
+        return bilangan;
+    }
+}
+
+int main(){
+ menu();
+ system ("pause");
+ return 0;
+}
+
+void menu(){
+ int pilih;
+ system ("cls");
+ printf ("======PROGRAM PERHITUNGAN ARITMATIKA======\n");
+ printf ("Menu:\n");
+ printf ("\t1. Penjumlahan\n");
+ printf ("\t2. Pengurangan\n");
+ printf ("\t3. Perkalian\n");
+ printf ("\t4. Pembagian\n");
+ printf ("\t5. Modulus\n");
+ printf ("\t6. Keluar\n");
+ printf ("Silahkan pilih menu kalkulator yang anda inginkan: ");
+ pilih = inputBilangan();
+ 
+ switch (pilih){
+  case 1:
+  penjumlahan();
+  break;
+  case 2:
+  pengurangan();
+  break;
+  case 3:
+  perkalian();
+  break;
+  case 4:
+  pembagian();
+  break;
+  case 5:
+  modulus();
+  break;
+  case 6:
+  keluar();
+  break;
+  default:
+  printf ("Menu yang anda masukkan tidak tersedia, mohon masukkan ulang");
+  getch();
+  menu();
+  break;
+ }
+}
+
+void penjumlahan(){
+ int pilih;
+ float angka1;
+ float angka2;
+ float hasil;
+ 
+ system ("cls");
+ printf ("======PENJUMLAHAN=====\n");
+ printf ("Masukkan bilangan pertama :");
+ angka1 = input_bilangan ();
+ printf ("Masukkan bilangan kedua   :");
+ angka2 = input_bilangan ();
+ 
+ hasil = angka1 + angka2;
+ printf ("\nHasil penjumlahan bilangan di atas adalah %.2f", hasil);
+ 
+ printf ("\n[1] Lanjut");
+ printf ("\n[2] Kembali\n");
+ printf ("[3] Keluar\n");
+ printf ("Apakah anda ingin lanjut? ");
+ pilih = inputBilangan();
+ 
+ switch (pilih){
+  case 1:
+  penjumlahan();
+  case 2:
+  menu();
+  case 3:
+  system("cls");
+  printf("Break a leg<3");
+  exit(0);
+  default:
+  printf ("Menu yang anda pilih tidak tersedia, mohon masukkan ulang\n");
+ }
+}
+
+void pengurangan(){
+ int pilih;
+ float angka1;
+ float angka2;
+ float hasil;
+ system ("cls");
+ printf ("======PENGURANGAN=====\n");
+ printf ("Masukkan bilangan pertama :");
+ angka1 = input_bilangan();
+ printf ("Masukkan bilangan kedua   :");
+ angka2 = input_bilangan();
+  
+ hasil = angka1 - angka2;
+ printf ("\nHasil pengurangan bilangan adalah %.2f", hasil);
+ 
+ printf ("\n[1] Lanjut");
+ printf ("\n[2] Kembali\n");
+ printf ("[3] Keluar\n");
+ printf ("Apakah anda ingin lanjut? ");
+ pilih = inputBilangan();
+ 
+ switch (pilih){
+  case 1:
+  pengurangan();
+  case 2:
+  menu();
+  case 3:
+  system("cls");
+  printf("Break a leg<3");
+  exit(0);
+  default:
+  printf ("Menu yang anda pilih tidak tersedia, mohon masukkan ulang\n");
+  break;
+ }
+}
+
+void perkalian(){
+ int pilih;
+ float angka1;
+ float angka2;
+ float hasil;
+ system ("cls");
+ printf ("======PERKALIAN=====\n");
+ printf ("Masukkan bilangan pertama :");
+ angka1 = input_bilangan();
+ printf ("Masukkan bilangan kedua   :");
+ angka2 = input_bilangan();
+ 
+ hasil = angka1 * angka2;
+ printf ("\nHasil perkalian bilangan adalah %.2f", hasil);
+ 
+ printf ("\n[1] Lanjut");
+ printf ("\n[2] Kembali\n");
+ printf ("[3] Keluar\n");
+ printf ("Apakah anda ingin lanjut? ");
+ pilih = inputBilangan();
+ 
+ switch (pilih){
+  case 1:
+  perkalian();
+  case 2:
+  menu();
+  case 3:
+  system("cls");
+  printf("Break a leg<3");
+  exit(0);
+  default:
+  printf ("Menu yang anda pilih tidak tersedia, mohon masukkan ulang\n");
+  break;
+ }
+}
+
+void pembagian(){
+ int pilih;
+ float angka1;
+ float angka2;
+ float hasil;
+ system ("cls");
+ printf ("======PEMBAGIAN=====\n");
+ printf ("Masukkan bilangan pertama :");
+ angka1 = input_bilangan();
+ printf ("Masukkan bilangan kedua   :");
+ angka2 = input_bilangan();
+ 
+ hasil = angka1 / angka2;
+ printf ("\nHasil pembagian bilangan adalah %.2f", hasil);
+ 
+ printf ("\n[1] Lanjut");
+ printf ("\n[2] Kembali\n");
+ printf ("[3] Keluar\n");
+ printf ("Apakah anda ingin lanjut? ");
+ pilih = inputBilangan();
+ 
+ switch (pilih){
+  case 1:
+  pembagian();
+  case 2:
+  menu();
+  case 3:
+  system("cls");
+  printf("Break a leg<3");
+  exit(0);
+  default:
+  printf ("Menu yang anda pilih tidak tersedia, mohon masukkan ulang\n");
+  break;
+ }
+}
+
+void modulus(){
+ int pilih;
+ int angka1;
+ int angka2;
+ int hasil;
+ system ("cls");
+ printf ("======MODULUS=====\n");
+ printf ("Masukkan bilangan pertama :");
+ angka1 = inputBilangan();
+ printf ("Masukkan bilangan kedua   :");
+ angka2 = inputBilangan();
+ 
+ hasil = fmod (angka1, angka2);
+ printf ("\nHasil modulus bilangan adalah %d", hasil);
+ 
+ printf ("\n[1] Lanjut");
+ printf ("\n[2] Kembali\n");
+ printf ("[3] Keluar\n");
+ printf ("Apakah anda ingin lanjut? ");
+ pilih = inputBilangan();
+ 
+ switch (pilih){
+  case 1:
+  modulus();
+  case 2:
+  menu();
+  case 3:
+  system("cls");
+  printf("Break a leg<3");
+  exit(0);
+  default:
+  printf ("Menu yang anda pilih tidak tersedia, mohon masukkan ulang\n");
+  break;
+ }
+}
+
+void keluar(){
+ exit(0);
+}
